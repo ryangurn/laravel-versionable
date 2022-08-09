@@ -67,11 +67,18 @@ class Post extends Model
     use Versionable;
 
     /**
-     * Versionable attributes
+     * Versionable attributes (whitelist)
      *
      * @var array
      */
     protected $versionable = ['title', 'content'];
+    
+    /**
+     * Non versionable attributes (blacklist)
+     * 
+     * @var array
+     */
+    protected $dontVersionable = ['user_id'];
 
     <...>
 }
